@@ -28,6 +28,34 @@ var Car = assets.AssetType{
 			},
 		},
 		{
+			// Required property - make
+			Required: true,
+			Tag:      "make",
+			Label:    "Car Make",
+			DataType: "string",
+			Validate: func(make interface{}) error {
+				makeStr := make.(string)
+				if makeStr == "" {
+					return fmt.Errorf("make must be non-empty")
+				}
+				return nil
+			},
+		},
+		{
+			// Required property - model
+			Required: true,
+			Tag:      "model",
+			Label:    "Car Model",
+			DataType: "string",
+			Validate: func(model interface{}) error {
+				modelStr := model.(string)
+				if modelStr == "" {
+					return fmt.Errorf("model must be non-empty")
+				}
+				return nil
+			},
+		},
+		{
 			// Required property - colour (only org1 and org2 can modify)
 			Required: true,
 			Tag:      "colour",
