@@ -10,12 +10,13 @@ This repository contains chaincode examples and customizations developed during 
 - Created a new asset type: **Car**
   - Properties:
     - `id` (string, IsKey, uses transaction ID)
-    - `make` (string)
-    - `model` (string)
+    - `make` (string, Required)  <!-- Atualizado: agora obrigatório -->
+    - `model` (string, Required)
     - `colour` (string, Required, Writers: org1 & org2 only)
-    - `owner` (reference to Person)
+    - `owner` (reference to Person, Required)
     - `dateTransfered` (datetime)
 - Updated the `owner` property in Car to reference the Person asset.
+- Added **make** as a required property to Car asset for full compatibility with the `registerCar` transaction.
 - Created a custom datatype: **bookRating**
   - Type: number
   - Validation: value must be >= 1.0 and <= 10.0
