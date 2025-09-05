@@ -13,31 +13,16 @@ var Car = assets.AssetType{
 
 	Props: []assets.AssetProp{
 		{
-			// Primary key - make
+			// Primary key - id
 			Required: true,
 			IsKey:    true,
-			Tag:      "make",
-			Label:    "Car Make",
+			Tag:      "id",
+			Label:    "Car ID",
 			DataType: "string",
-			Validate: func(make interface{}) error {
-				makeStr := make.(string)
-				if makeStr == "" {
-					return fmt.Errorf("make must be non-empty")
-				}
-				return nil
-			},
-		},
-		{
-			// Primary key - model
-			Required: true,
-			IsKey:    true,
-			Tag:      "model",
-			Label:    "Car Model",
-			DataType: "string",
-			Validate: func(model interface{}) error {
-				modelStr := model.(string)
-				if modelStr == "" {
-					return fmt.Errorf("model must be non-empty")
+			Validate: func(id interface{}) error {
+				idStr := id.(string)
+				if idStr == "" {
+					return fmt.Errorf("id must be non-empty")
 				}
 				return nil
 			},
@@ -56,6 +41,12 @@ var Car = assets.AssetType{
 				}
 				return nil
 			},
+		},
+		{
+			// Date the car was transferred to the current owner
+			Tag:      "dateTransfered",
+			Label:    "Date Transferred",
+			DataType: "datetime",
 		},
 		{
 			// Reference to Person asset - owner
