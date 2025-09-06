@@ -11,6 +11,9 @@
 # Output do compilador go
 *.out
 
+# Binário compilado do chaincode
+chaincode
+
 # Dependências vendor (bibliotecas externas)
 vendor/
 
