@@ -1,0 +1,12 @@
+{
+   "index": {
+      "fields": [
+         "owner",
+         {
+            "dateTransfered": "desc"
+         }
+      ]
+   },
+   "name": "owner-dateTransfered-index",
+   "type": "json"
+}

@@ -1,0 +1,11 @@
+{
+   "index": {
+      "fields": [
+         {
+            "dateTransfered": "desc"
+         }
+      ]
+   },
+   "name": "dateTransfered-index",
+   "type": "json"
+}
