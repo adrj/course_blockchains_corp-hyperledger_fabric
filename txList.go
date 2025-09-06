@@ -16,4 +16,5 @@ var txList = []tx.Transaction{
 	txdefs.GetBooksByAuthor,
 	txdefs.RegisterCar,
 	txdefs.TransferCar,
+	txdefs.GetCarsByOwner,
 }
