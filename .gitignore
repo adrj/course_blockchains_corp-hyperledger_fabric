@@ -1,0 +1,40 @@
+# Binários
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binários
+*.test
+
+# Output do compilador go
+*.out
+
+# Dependências vendor (bibliotecas externas)
+vendor/
+
+# Logs
+*.log
+
+# Arquivos temporários do editor
+*~
+.*.swp
+.*.swo
+
+# IDE
+.vscode/
+.idea/
+
+# Arquivos de configuração local
+*.local
+
+# Archives
+*.tar.gz
+*.zip
+
+# Keystore (arquivos de certificados/chaves privadas)
+keystore/
+*.pem
+*.key
+*.crt

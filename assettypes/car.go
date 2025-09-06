@@ -77,6 +77,12 @@ var Car = assets.AssetType{
 			DataType: "datetime",
 		},
 		{
+			// ID of the transaction that last transferred this car
+			Tag:      "lastTransferTxId",
+			Label:    "Last Transfer Transaction ID",
+			DataType: "string",
+		},
+		{
 			// Reference to Person asset - owner
 			Tag:      "owner",
 			Label:    "Car Owner",
