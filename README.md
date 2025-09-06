@@ -53,6 +53,8 @@ This repository contains chaincode examples and customizations developed during 
 - **CouchDB indexes**: Created optimized indexes for car queries (owner-dateTransfered-index.json, dateTransfered-index.json)
 - **Enhanced data validation**: Improved CPF validation and asset key handling
 - **Comprehensive testing data**: Created test data with valid Brazilian CPFs for functional validation
+- **Custom datatype bookRating**: Number validation (1.0 <= value <= 10.0) added to Book asset
+- Updated the `owner` property in Car to reference the Person asset
 - Vendor dependencies and build configurations included
 - Updated chaincode to latest version with sequence management
 - All changes and code updates were made by Adalto dos Reis Junior (adrj)
