@@ -7,23 +7,50 @@ This repository contains chaincode examples and customizations developed during 
 
 ## Examples and Customizations
 
-- Created a new asset type: **Car**
+### Asset Types
+- **Car**
   - Properties:
     - `id` (string, IsKey, uses transaction ID)
-    - `make` (string, Required)  <!-- Atualizado: agora obrigatório -->
+    - `make` (string, Required)
     - `model` (string, Required)
     - `colour` (string, Required, Writers: org1 & org2 only)
     - `owner` (reference to Person, Required)
     - `dateTransfered` (datetime)
-- Updated the `owner` property in Car to reference the Person asset.
-- Added **make** as a required property to Car asset for full compatibility with the `registerCar` transaction.
-- Created a custom datatype: **bookRating**
-  - Type: number
-  - Validation: value must be >= 1.0 and <= 10.0
-- Added the `bookRating` property to the Book asset.
-- Added a custom transaction (`registerCar`) to register a new Car asset using the transaction ID as the car's primary key. The transaction receives make, model, colour, owner, and dateTransfered as parameters, and automatically sets the car's ID to the transaction ID (deterministic and available to all peers).
-- Updated chaincode to version 0.3, sequence 3.
-- All changes and code updates were made by Adalto dos Reis Junior (adrj).
+    - `lastTransferTxId` (string) - ID of the transaction that last transferred this car
+- **Library**
+  - Comprehensive library management asset
+- **Person**
+  - User/person asset with CPF validation
+- **Secret**
+  - Private data asset for confidential information
+- **Custom Dynamic Asset Types**
+  - Support for creating new asset types dynamically
+
+### Data Types
+- **BookRating**: Number validation (1.0 <= value <= 10.0)
+- **BookType**: Enumeration for book categories
+- **CPF**: Brazilian tax ID with validation
+
+### Transactions
+- **registerCar**: Register a new Car asset using the transaction ID as the car's primary key
+- **transferCar**: Transfer car ownership between parties
+- **createNewLibrary**: Create a new library with comprehensive metadata
+- **getBooksByAuthor**: Query books by author name
+- **getNumberOfBooksFromLibrary**: Get the total count of books in a library
+- **updateBookTenant**: Update book tenant information
+
+### Event Types
+- **createLibraryLog**: Logging events for library creation
+- Enhanced transaction event logging
+
+### Features Added
+- Collections configuration for private data management
+- Comprehensive test coverage for all new functionality
+- Enhanced Car asset with transaction tracking capabilities
+- Refactored registerCar transaction with improved structure and event logging
+- Vendor dependencies and build configurations included
+- Updated chaincode to latest version with sequence management
+- All changes and code updates were made by Adalto dos Reis Junior (adrj)
 
 ---
 
